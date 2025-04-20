@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ffd1dc;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .envelopes {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .envelope {
+    width: 100px;
+    height: 80px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/561/561127.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .message {
+    margin-top: 40px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #c2185b;
+  }
+  
+  /* 하트 애니메이션 */
+  .heart {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(233, 10, 47);
+    transform: rotate(-0deg);
+    animation: floatUp 8s linear infinite;
+    opacity: 0.8;
+  
+    /* 하트 모양 구성 */
+    border-radius: 50% 50% 0 0;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(233, 10, 47);
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -20px;
+    left: 0;
+  }
+  
+  .heart::after {
+    left: 20px;
+    top: 0;
+  }
+  
+  @keyframes floatUp {
+    0% {
+      transform: translateY(100vh) scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-100vh) scale(0.5);
+      opacity: 0;
+    }
+  }
+  
